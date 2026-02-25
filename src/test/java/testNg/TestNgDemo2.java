@@ -1,12 +1,11 @@
 package testNg;
 
 import io.restassured.RestAssured;
-import org.apache.logging.log4j.core.net.Priority;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class TestNgDemo {
+public class TestNgDemo2 {
     @BeforeTest
     void setUp(){
         System.out.println("Open browser");
@@ -26,14 +25,6 @@ public class TestNgDemo {
                 .when()
                 .get().then().statusCode(201);
     }
-    @Test()
-    void TC2(){
-        System.out.println("Rest ful booker test2");
-        RestAssured
-                .given()
-                .baseUri("https://restful-booker.herokuapp.com/")
-                .basePath("/ping")
-                .when()
-                .get().then().statusCode(201);
+
     }
-}
+
