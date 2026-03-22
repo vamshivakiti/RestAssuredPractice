@@ -10,8 +10,9 @@ public class getReqNonBDDstyle {
         //
         RequestSpecification rs= RestAssured.given();
         rs.baseUri("https://restful-booker.herokuapp.com");
-        rs.basePath("/booking/717").log().all();
-        rs.when().get();
+        rs.basePath("/booking/1905");
+        rs.log().all();
+        rs.when().log().all().get();
         rs.then().log().all().statusCode(200);
 //        RequestSpecification rs = RestAssured.given();
 //        rs.baseUri("https://api.zippopotam.us");

@@ -10,19 +10,19 @@ import org.testng.annotations.Test;
 public class NonBddPostReq {
 Response response;
     @Test
-    void nonBddReq(){
-        String BaseUri="https://restful-booker.herokuapp.com";
+    void nonBddReq() {
+        String BaseUri = "https://restful-booker.herokuapp.com";
         String BasePath = "/booking";
         String payLoad = "{\n" +
                 "    \"firstname\" : \"Dhanvi\",\n" +
-                "    \"lastname\" : \"V\",\n" +
+                "    \"lastname\" : \"Vakiti\",\n" +
                 "    \"totalprice\" : 100,\n" +
                 "    \"depositpaid\" : true,\n" +
                 "    \"bookingdates\" : {\n" +
-                "        \"checkin\" : \"2026-02-28\",\n" +
-                "        \"checkout\" : \"2026-03-01\"\n" +
+                "        \"checkin\" : \"2026-03-01\",\n" +
+                "        \"checkout\" : \"2026-03-05\"\n" +
                 "    },\n" +
-                "    \"additionalneeds\" : \"PoolAccess\"                        \n" +
+                "    \"additionalneeds\" : \"PoolAccess\"\n" +
                 "}";
         RequestSpecification r = RestAssured
                 //given
@@ -32,11 +32,9 @@ Response response;
         r.contentType(ContentType.JSON).log().all();
         r.body(payLoad);
         //when
-      r.when().log().all().post();
-
+        r.when().log().all().post();
         //then
         r.then().log().all().statusCode(200);
 
     }
-
 }

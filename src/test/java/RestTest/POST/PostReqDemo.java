@@ -10,15 +10,17 @@ public class PostReqDemo {
 
         String BaseUri="https://restful-booker.herokuapp.com";
         String BasePath = "/booking";
-        String payLoad = "{\n" +
-                "    \"firstname\" : \"Dhanu\",\n" +
-                "    \"lastname\" : \"V\",\n" +
-                "    \"totalprice\" : 100000,\n" +
-                "    \"depositpaid\" : true,\n" +
-                "    \"bookingdates\" : {\n" +
-                "        \"checkin\" : \"2026-02-29\",\n" +
-                "        \"checkout\" : \"2026-03-01\"\n" +
-                "    },";
+    String payLoad = "{\n" +
+            "    \"firstname\" : \"Dhanvi\",\n" +
+            "    \"lastname\" : \"Vakiti\",\n" +
+            "    \"totalprice\" : 100,\n" +
+            "    \"depositpaid\" : true,\n" +
+            "    \"bookingdates\" : {\n" +
+            "        \"checkin\" : \"2026-03-01\",\n" +
+            "        \"checkout\" : \"2026-03-05\"\n" +
+            "    },\n" +
+            "    \"additionalneeds\" : \"PoolAccess\"\n" +
+            "}";
 
         RestAssured.given()
                 .baseUri(BaseUri)
@@ -26,10 +28,5 @@ public class PostReqDemo {
                 .contentType(ContentType.JSON).log().all().body(payLoad)
                 .when().post()
                 .then().log().all().statusCode(200);
-
-
-
-
-
-    }
+}
 }

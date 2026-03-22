@@ -8,8 +8,8 @@ public class getRequestBody {
     public  void getReqBody(){
         RestAssured
                 .given()
-                .baseUri("https://api.zippopotam.us")
-                .basePath("/in/509001")
+                .baseUri("https://restful-booker.herokuapp.com")
+                .basePath("/booking/1905")
                 .when().get()
                 .then().log().all()
                 .statusCode(200);
