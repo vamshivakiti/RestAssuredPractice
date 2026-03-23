@@ -4,7 +4,8 @@
     <test verbose="2" preserve-order="true" name="C:/Users/LENOVO/IdeaProjects/RestAssuredPractice/src/test/java/testNg/AnnotationsDemo.java">
         <classes>
             <class name="testNg.AnnotationsDemo">
-                <methods><include name="TestDemo"/></methods>
+            </class>
+            <class name="testNg.AssertionsDemo">
             </class>
         </classes>
     </test>
